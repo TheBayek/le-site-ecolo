@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoSource : L'encyclopÃ©die interactive et la plateforme de passage Ã  l'action pour comprendre et protÃ©ger notre environnement.">
+    <meta property="og:title" content="EcoSource - ProtÃ©ger notre futur">
+    <meta property="og:description" content="DÃ©couvrez les dÃ©fis Ã©cologiques actuels et passez Ã  l'action.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2fb56a">
+    <title>L'Urgence Climatique - EcoSource</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Eco<span class="accent">Source</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="portal.html">Le Portail</a></li>
+            <li><a href="urgency.html" class="active">L'Urgence</a></li>
+            <li><a href="action.html">Agir</a></li>
+            <li><a href="quiz.html">Le Quiz</a></li>
+            </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="hero-bg" style="background-image: url('urgency_hero.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="page-header-content">
+            <h1 class="reveal fade-up">L'état de <span>notre monde</span></h1>
+            <p class="reveal fade-up delay-1">Trois crises majeures menacent l'équilibre de nos écosystèmes et notre avenir commun. Comprendre le problème est la première étape vers la solution.</p>
+        </div>
+    </header>
+
+    <section class="section urgency-section">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card reveal fade-up">
+                    <div class="card-img" style="background-image: url('climate.png');"></div>
+                    <div class="card-content">
+                        <div class="card-badge warning">Urgence Absolue</div>
+                        <h3>Changement Climatique</h3>
+                        <p>Les températures mondiales continuent d'augmenter. Les sécheresses, inondations et vagues de chaleur deviennent plus intenses et fréquentes, bouleversant les milieux naturels et la vie humaine.</p>
+                        <p>Les émissions de gaz à effet de serre piègent la chaleur. Si nous ne réduisons pas drastiquement nos émissions d'ici 2030, les dommages seront irréversibles.</p>
+                        <div class="card-stat">
+                            <span class="stat-value">+1.2°C</span>
+                            <span class="stat-label">depuis l'ère préindustrielle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card reveal fade-up delay-1">
+                    <div class="card-img" style="background-image: url('forest.png');"></div>
+                    <div class="card-content">
+                        <div class="card-badge danger">Point de bascule</div>
+                        <h3>Déforestation</h3>
+                        <p>Nos forêts, poumons de la Terre, disparaissent à un rythme alarmant. Chaque minute, l'équivalent de dizaines de terrains de football de forêts tropicales est détruit, menaçant la biodiversité.</p>
+                        <p>En détruisant ces habitats, non seulement nous poussons d'innombrables espèces vers l'extinction, mais nous relâchons également du carbone massivement stocké dans les arbres.</p>
+                        <div class="card-stat">
+                            <span class="stat-value">10M ha</span>
+                            <span class="stat-label">perdus par an (2015-2020)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card reveal fade-up delay-2">
+                    <div class="card-img" style="background-image: url('ocean.png');"></div>
+                    <div class="card-content">
+                        <div class="card-badge info">Crise silencieuse</div>
+                        <h3>Océans en Péril</h3>
+                        <p>La pollution plastique, la surpêche et l'acidification détruisent nos fonds marins. Moins d'oxygène est produit, et des écosystèmes entiers comme les récifs coralliens se meurent lentement.</p>
+                        <p>Les océans absorbent environ 30% du CO2 produit par les humains, ce qui rend l'eau plus acide et empêche la formation des coquilles et des squelettes coralliens.</p>
+                        <div class="card-stat">
+                            <span class="stat-value">8M tonnes</span>
+                            <span class="stat-label">de plastique rejetées par an</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-banner reveal fade-up" style="margin-top: 80px; text-align: center; padding: 60px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.05);">
+                <h2>Face à ces constats, que pouvons-nous faire ?</h2>
+                <p style="margin: 20px auto; max-width: 600px; color: var(--text-muted);">Le désespoir n'est pas une option. Des solutions existent, tant à l'échelle globale qu'individuelle.</p>
+                <a href="action.html" class="btn btn-primary">Découvrir les actions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Eco<span class="accent">Source</span></div>
+                <p>Création pour la sensibilisation écologique et la protection de notre environnement commun.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                   <li><a href="index.html">Accueil</a></li>
+                   <li><a href="portal.html">Le Portail</a></li>
+            <li><a href="urgency.html">L'Urgence</a></li>
+                   <li><a href="action.html">Agir</a></li>
+                   <li><a href="quiz.html">Le Quiz</a></li>
+                   </ul>
+            </div>
+            <div class="footer-cta">
+                <h4>Rejoindre la Newsletter</h4>
+                <div class="input-group">
+                    <input type="email" placeholder="Votre email pour la planète">
+                    <button class="btn btn-primary">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoSource. Un projet en faveur du monde de demain. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

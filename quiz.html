@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Testez vos connaissances écologiques avec le grand quizz EcoSource en 10 niveaux.">
+    <meta property="og:title" content="Le Grand Quiz Écolo - EcoSource">
+    <title>Le Grand Quiz - EcoSource</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+        .question-text {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        @media (max-width: 600px) {
+            .options-grid { grid-template-columns: 1fr; }
+        }
+        .option-btn {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            color: #d1d5db;
+            padding: 20px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-family: inherit;
+        }
+        .option-btn:hover {
+            background: rgba(47, 181, 106, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .option-btn.correct {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        .option-btn.wrong {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: white;
+        }
+        .score-board {
+            text-align: center;
+            display: none;
+        }
+        .score-board h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .level-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .explanation {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(14, 165, 233, 0.1);
+            border-left: 4px solid var(--info);
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+        }
+        #next-btn {
+            display: none;
+            margin: 30px auto 0;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Eco<span class="accent">Source</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="portal.html">Le Portail</a></li>
+            <li><a href="urgency.html">L'Urgence</a></li>
+            <li><a href="action.html">Agir</a></li>
+            <li><a href="quiz.html" class="active">Le Quiz</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="page-header" style="height: 40vh; min-height: 300px;">
+        <div class="hero-bg" style="background-image: url('hero.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="page-header-content">
+            <h1 class="reveal fade-up">Le Grand Quiz</h1>
+            <p class="reveal fade-up delay-1">Testez vos connaissances en 10 niveaux.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="glass-panel quiz-container reveal fade-up">
+                
+                <div id="quiz-block">
+                    <div style="text-align: center;">
+                        <span class="level-badge" id="level-display">Niveau 1 / 10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress"></div>
+                    </div>
+                    
+                    <h2 class="question-text" id="question">Question s'affiche ici</h2>
+                    
+                    <div class="options-grid" id="options">
+                        <!-- Options injectées en JS -->
+                    </div>
+
+                    <div class="explanation" id="explanation"></div>
+
+                    <div style="text-align: center;">
+                        <button id="next-btn" class="btn btn-primary">Question suivante &rarr;</button>
+                    </div>
+                </div>
+
+                <div id="score-block" class="score-board">
+                    <h2>Votre Score : <span id="final-score" class="highlight">0</span>/10</h2>
+                    <p id="score-message" style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Message</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Rejouer</button>
+                    <a href="action.html" class="btn btn-outline" style="margin-left: 15px;">Passer à l'action</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Eco<span class="accent">Source</span></div>
+                <p>Création pour la sensibilisation écologique et la protection de notre environnement commun.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted);">
+                   <li><a href="index.html">Accueil</a></li>
+                   <li><a href="portal.html">Le Portail</a></li>
+                   <li><a href="action.html">Agir</a></li>
+                   <li><a href="quiz.html">Le Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoSource.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
+
+
+
